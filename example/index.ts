@@ -3,12 +3,20 @@
  * @author wangfupeng
  */
 
-import { IDomEditor, createEditor, createToolbar, Boot, IEditorConfig } from '@wangeditor/editor'
-// import module, { MentionElement } from '../src/index'
-import '../src/index'
+import {
+  IDomEditor,
+  createEditor,
+  createToolbar,
+  Boot,
+  IEditorConfig,
+  i18nChangeLanguage,
+} from '@wangeditor/editor'
+import module from '../src/index'
 
 // 注册
-// Boot.registerModule(module)
+Boot.registerModule(module)
+
+// i18nChangeLanguage('en')
 
 // 编辑器配置
 const editorConfig: Partial<IEditorConfig> = {
@@ -20,22 +28,44 @@ const editorConfig: Partial<IEditorConfig> = {
     // @ts-ignore
     document.getElementById('text-json').value = contentStr
   },
+  hoverbarKeys: {
+    link: {
+      menuKeys: ['editLink', 'unLink', 'viewLink', 'convertToLinkCard'],
+    },
+  },
 }
+
+const linkCardHtml = `<div data-w-e-type="link-card" data-w-e-is-void data-title="百度新闻" data-link="http://news.baidu.com/" data-iconImgSrc="https://news-bos.cdn.bcebos.com/mvideo/log-news.png">
+  <div class="info-container">
+    <div class="title-container"><p>百度新闻</p></div>
+    <div class="link-container"><span>http://news.baidu.com/</span></div>
+  </div>
+  <div class="icon-container">
+    <img src="https://news-bos.cdn.bcebos.com/mvideo/log-news.png"/>
+  </div>
+</div>`
 
 // 创建编辑器
 const editor = createEditor({
   selector: '#editor-container',
   config: editorConfig,
-  content: [
-    {
-      // @ts-ignore
-      type: 'paragraph',
-      children: [
-        { text: 'hello world' },
-      ],
-    },
-  ],
-  // html: `<p>hello&nbsp;world</p>`,
+  // content: [
+  //   {
+  //     // @ts-ignore
+  //     type: 'paragraph',
+  //     children: [{ text: 'hello world' }],
+  //   },
+  //   {
+  //     // @ts-ignore
+  //     type: 'link-card',
+  //     title: '网页标题网页标题网页标题',
+  //     link: 'https://zhuanlan.zhihu.com/',
+  //     iconImgSrc: '',
+  //     children: [{ text: '' }],
+  //   },
+  // ],
+  html: `<p>hello&nbsp;world</p>${linkCardHtml}`,
+  // html: `<p>hello&nbsp;<a href="http://news.baidu.com/" target="_blank">百度新闻</a>&nbsp;world</p>`,
 })
 const toolbar = createToolbar({
   editor,
