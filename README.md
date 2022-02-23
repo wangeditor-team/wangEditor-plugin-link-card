@@ -1,2 +1,3 @@
-# wangEditor-plugin-link-card
-wangEditor link-card plugin
+# wangEditor 链接卡片 插件
+
+开发中...
