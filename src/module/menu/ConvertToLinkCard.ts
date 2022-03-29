@@ -11,7 +11,7 @@ import {
   SlateTransforms,
   SlateEditor,
 } from '@wangeditor/editor'
-import { IButtonMenu } from '@wangeditor/core'
+import { IButtonMenu } from '@wangeditor/editor'
 import { LinkCardElement, LinkElement } from '../custom-types'
 
 class ConvertToLinkCard implements IButtonMenu {
