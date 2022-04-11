@@ -4,7 +4,7 @@
 
 ## 介绍
 
-[wangEditor](https://www.wangeditor.com/v5/) 链接卡片 插件。
+[wangEditor](https://www.wangeditor.com/) 链接卡片 插件。
 
 ![](./_img/demo.png)
 

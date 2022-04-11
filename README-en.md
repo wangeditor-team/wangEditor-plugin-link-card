@@ -4,7 +4,7 @@
 
 ## Introduction
 
-[wangEditor](https://www.wangeditor.com/v5/) link-card plugin.
+[wangEditor](https://www.wangeditor.com/en/) link-card plugin.
 
 ![](./_img/demo.png)
 
